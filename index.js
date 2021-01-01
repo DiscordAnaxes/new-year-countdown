@@ -7,4 +7,7 @@ app.use(express.static(__dirname + "/public"));
 app.get('/', (req, res) => {
     res.render('index')
 });
+app.get('*', function (req, res) {
+    res.status(301).redirect('/')
+});
 app.listen(port);
